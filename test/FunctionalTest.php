@@ -3,10 +3,9 @@
 namespace Twig\Inky\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Twig\Inky\InkyExtension;
 use Twig\Environment;
+use Twig\Inky\InkyExtension;
 use Twig\Loader\ArrayLoader;
-use Twig\RuntimeLoader\RuntimeLoaderInterface;
 
 class FunctionalTest extends TestCase
 {
