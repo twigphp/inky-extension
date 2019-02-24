@@ -1,0 +1,39 @@
+{
+    "name": "twig/inky-extension",
+    "type": "library",
+    "description": "A Twig extension for the inky email templating engine",
+    "keywords": ["twig", "inky", "email", "emails"],
+    "homepage": "https://twig.symfony.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabien Potencier",
+            "email": "fabien@symfony.com",
+            "homepage": "http://fabien.potencier.org",
+            "role": "Lead Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "lorenzo/pinky": "^1.0",
+        "twig/twig": "^1.0 || ^2.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.1.8"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Twig\\Inky\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4" : {
+            "Twig\\Inky\\Tests\\" : "test/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
