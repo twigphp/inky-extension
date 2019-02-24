@@ -9,12 +9,24 @@ use Twig\Loader\ArrayLoader;
 
 class FunctionalTest extends TestCase
 {
-    public function test()
+    /**
+     * @dataProvider getTests
+     */
+    public function test($template)
     {
         $twig = new Environment(new ArrayLoader([
-            'index' => '{% inky %}<container class="extra"></container>{% endinky %}',
-        ]));
+            'index' => $template,
+            'inky' => '<container class="extra">{{ var }}</container>',
+        ], ['autoescape' => 'html']));
         $twig->addExtension(new InkyExtension());
-        $this->assertContains('<table align="center" class="extra container"><tbody><tr><td></td></tr></tbody></table>', $twig->render('index'));
+        $this->assertContains('<table align="center" class="extra container"><tbody><tr><td>value&lt;br /&gt;</td></tr></tbody></table>', $twig->render('index', ['var' => 'value<br />']));
+    }
+
+    public function getTests()
+    {
+        return [
+            ['{% filter inky %}<container class="extra">{{ var }}</container>{% endfilter %}', '<p style="color: red;">Great!</p>'],
+            ['{{ include("inky")|inky }}'],
+        ];
     }
 }

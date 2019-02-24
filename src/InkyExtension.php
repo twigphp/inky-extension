@@ -13,13 +13,14 @@ namespace Twig\Inky;
 
 use Pinky;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 class InkyExtension extends AbstractExtension
 {
-    public function getTokenParsers()
+    public function getFilters()
     {
         return [
-            new InkyTokenParser(),
+            new TwigFilter('inky', 'Twig\\Inky\\twig_inky', ['is_safe' => ['all']]),
         ];
     }
 }
