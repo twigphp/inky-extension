@@ -9,7 +9,7 @@ If you are not using Symfony, register the extension on Twig's `Environment`
 manually:
 
 ```php
-use Twig\CssInliner\InkyExtension;
+use Twig\Inky\InkyExtension;
 use Twig\Environment;
 
 $twig = new Environment(...);
