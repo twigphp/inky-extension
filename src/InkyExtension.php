@@ -13,9 +13,10 @@ namespace Twig\Inky;
 
 use Pinky;
 use Twig\Extension\AbstractExtension;
+use Twig\Extension\ExtensionInterface;
 use Twig\TwigFilter;
 
-class InkyExtension extends AbstractExtension
+class InkyExtension extends AbstractExtension implements ExtensionInterface
 {
     public function getFilters()
     {
