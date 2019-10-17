@@ -1,6 +1,8 @@
 Twig Inky Extension
 ===================
 
+**WARNINIG**: This package is deprecate; migrate to `twig/inky-extra` instead.
+
 This package provides support for the [inky email templating
 engine](https://github.com/zurb/inky) in Twig via a filter (`inky`) for Twig and
 a Symfony bundle.
